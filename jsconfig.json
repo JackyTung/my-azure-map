@@ -9,6 +9,7 @@
       "@/apis/*": ["apis/*"],
       "@/utils/*": ["utils/*"],
       "@/hooks/*": ["hooks/*"],
+      "@/constants/*": ["constants/*"],
     }
   }
 }
