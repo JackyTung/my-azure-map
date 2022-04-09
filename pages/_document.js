@@ -30,7 +30,13 @@ class AppDocument extends Document {
   render() {
     return (
       <Html lang="zh-TW">
-        <Head />
+        <Head>
+          <link
+            rel="stylesheet"
+            href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css"
+            type="text/css"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
