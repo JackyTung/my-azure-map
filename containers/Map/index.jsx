@@ -1,10 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
+import dynamic from "next/dynamic";
+import { StyledContainer, StyledButton, StyledMapContainer } from "./styles";
 
-import { MAP_KEY } from "@/utils/app.config";
+const DynamicComponent = dynamic(() => import("./MapCore"), { ssr: false });
 
 const Map = () => {
-  console.log("MAP_KEY", MAP_KEY);
-  return <div>This is map page</div>;
+  return (
+    <StyledContainer>
+      <DynamicComponent />
+      <StyledButton>Search</StyledButton>
+    </StyledContainer>
+  );
 };
 
 export default Map;
