@@ -10,6 +10,7 @@
       "@/utils/*": ["utils/*"],
       "@/hooks/*": ["hooks/*"],
       "@/constants/*": ["constants/*"],
+      "@/contexts/*": ["contexts/*"],
     }
   }
 }
