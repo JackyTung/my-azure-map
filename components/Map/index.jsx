@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 import { StyledMapContainer } from "./styles";
 
 const Map = ({ children, options = {} }) => {
-  const { map, setMap, isMapReady, setMapReady, removeMap } =
+  const { map, setMap, isMapReady, setMapReady, removeMap, setDataSource } =
     useContext(MapContext);
   const [mapId] = useState(nanoid());
 
@@ -21,6 +21,9 @@ const Map = ({ children, options = {} }) => {
     if (map) {
       map.events.add("ready", () => {
         setMapReady(true);
+        const ds = new atlas.source.DataSource();
+        map.sources.add(ds);
+        setDataSource(ds);
       });
     }
   }, [map]);
