@@ -1,14 +1,16 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { StyledContainer } from "./styles";
-
+import MapProvider from "@/contexts/Map";
 const DynamicComponent = dynamic(() => import("./MapCore"), { ssr: false });
 
 const InteractiveMapSearch = () => {
   return (
-    <StyledContainer>
-      <DynamicComponent />
-    </StyledContainer>
+    <MapProvider>
+      <StyledContainer>
+        <DynamicComponent />
+      </StyledContainer>
+    </MapProvider>
   );
 };
 
