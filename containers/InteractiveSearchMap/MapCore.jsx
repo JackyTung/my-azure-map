@@ -3,6 +3,8 @@ import Map from "@/components/Map";
 import { StyledMapContainer, StyledProgress } from "./MapCore.styles";
 import { MAP_KEY } from "@/utils/app.config";
 
+import Search from "./Search";
+
 const options = {
   center: [-122.33, 47.6],
   zoom: 12,
@@ -17,6 +19,7 @@ const MapCore = () => {
   return (
     <>
       <Map options={options} />
+      <Search />
     </>
   );
 };
