@@ -5,6 +5,8 @@ import { MAP_KEY } from "@/utils/app.config";
 
 import Search from "./Search";
 
+import useMapLayer from "@/hooks/useMapLayer";
+
 const options = {
   center: [-122.33, 47.6],
   zoom: 12,
@@ -15,7 +17,18 @@ const options = {
   },
 };
 
+const layerOptions = {
+  iconOptions: {
+    image: "pin-round-darkblue",
+    anchor: "center",
+    allowOverlap: true,
+  },
+};
+
 const MapCore = () => {
+  useMapLayer({
+    options: layerOptions,
+  });
   return (
     <>
       <Map options={options} />

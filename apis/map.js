@@ -23,14 +23,14 @@ export const searchAddress = ({ query = "1 microsoft way, redmond, wa" }) => {
 };
 
 // Ref: https://docs.microsoft.com/en-us/rest/api/maps/search/get-search-poi
-//
 export const searchPOI = ({ query = "gasoline-station", payload }) => {
-  const { limit, lat, lon, radius } = payload;
+  const { limit, lat, lon, radius, maxFuzzyLevel } = payload;
   return searchURL.searchPOI(atlasService.Aborter.timeout(10000), query, {
     limit,
     lat,
     lon,
     radius,
+    maxFuzzyLevel,
     view: "Auto",
   });
 };
