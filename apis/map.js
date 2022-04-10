@@ -1,3 +1,5 @@
+// Ref: https://docs.microsoft.com/en-us/javascript/api/azure-maps-rest/atlas.service.searchurl?view=azure-maps-typescript-latest#methods
+
 import * as atlasService from "azure-maps-rest";
 import { MAP_KEY } from "@/utils/app.config";
 
@@ -16,6 +18,19 @@ export const searchURL = new atlasService.SearchURL(pipeline);
 
 export const searchAddress = ({ query = "1 microsoft way, redmond, wa" }) => {
   return searchURL.searchAddress(atlasService.Aborter.timeout(10000), query, {
+    view: "Auto",
+  });
+};
+
+// Ref: https://docs.microsoft.com/en-us/rest/api/maps/search/get-search-poi
+//
+export const searchPOI = ({ query = "gasoline-station", payload }) => {
+  const { limit, lat, lon, radius } = payload;
+  return searchURL.searchPOI(atlasService.Aborter.timeout(10000), query, {
+    limit,
+    lat,
+    lon,
+    radius,
     view: "Auto",
   });
 };
