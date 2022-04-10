@@ -5,8 +5,15 @@ import { nanoid } from "nanoid";
 import { StyledMapContainer } from "./styles";
 
 const Map = ({ children, options = {} }) => {
-  const { map, setMap, isMapReady, setMapReady, removeMap, setDataSource } =
-    useContext(MapContext);
+  const {
+    map,
+    setMap,
+    isMapReady,
+    setMapReady,
+    removeMap,
+    setDataSource,
+    setPopup,
+  } = useContext(MapContext);
   const [mapId] = useState(nanoid());
 
   useEffect(() => {
@@ -25,6 +32,8 @@ const Map = ({ children, options = {} }) => {
         map.sources.add(ds);
         setDataSource(ds);
       });
+
+      setPopup(new atlas.Popup());
     }
   }, [map]);
 

@@ -54,3 +54,40 @@ export const StyledContainer = styled.div`
     outline: none;
   }
 `;
+
+export const StyledPanel = styled.ul`
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  list-style: none;
+  overflow-y: auto;
+  max-height: calc(100vh - 119px);
+
+  & > li {
+    border-top: 1px dotted #ccc;
+    padding: 10px 20px;
+  }
+
+  & > li:hover {
+    background-color: #f1f2f2;
+    cursor: pointer;
+  }
+
+  & > li > .title {
+    font-family: segoeui-b;
+    line-height: 14pt;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  & > li > .info {
+    width: 100%;
+    line-height: 14pt;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+`;

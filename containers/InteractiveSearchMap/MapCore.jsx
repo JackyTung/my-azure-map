@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Map from "@/components/Map";
-import { StyledMapContainer, StyledProgress } from "./MapCore.styles";
 import { MAP_KEY } from "@/utils/app.config";
 
 import Search from "./Search";
