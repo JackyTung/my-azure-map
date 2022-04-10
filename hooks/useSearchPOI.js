@@ -1,7 +1,7 @@
 import { searchPOI } from "@/apis/map";
 import { useState } from "react";
 
-const useSearchPOI = () => {
+const useSearchPOI = ({ onSuccessCallback = () => {} }) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -19,6 +19,7 @@ const useSearchPOI = () => {
       setData(resp);
       setIsSuccess(true);
       setIsLoading(false);
+      onSuccessCallback?.(resp);
     } catch (err) {
       setIsLoading(false);
       setIsSuccess(false);

@@ -16,7 +16,17 @@ const options = {
 
 const MapCore = () => {
   const { map, isMapReady, dataSource } = useContext(MapContext);
-  const { isLoading, isSuccess, data, handleSearchPOI } = useSearchPOI();
+  const handleSuccessCallback = (resp) => {
+    dataSource.add(resp);
+    map.setCamera({
+      bounds: resp.bbox,
+      zoom: 10,
+      padding: 15,
+    });
+  };
+  const { isLoading, isSuccess, data, handleSearchPOI } = useSearchPOI({
+    onSuccessCallback: handleSuccessCallback,
+  });
 
   useEffect(() => {
     if (map && isMapReady) {
@@ -78,17 +88,6 @@ const MapCore = () => {
       }
     }
   }, [map, isMapReady]);
-
-  useEffect(() => {
-    if (isSuccess && data && dataSource && map) {
-      dataSource.add(data);
-      map.setCamera({
-        bounds: data.bbox,
-        zoom: 10,
-        padding: 15,
-      });
-    }
-  }, [isSuccess, data, dataSource, map]);
 
   return (
     <>

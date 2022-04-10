@@ -8,13 +8,17 @@ import { useEffect } from "react";
 
 const Search = () => {
   const { map, dataSource } = useContext(MapContext);
-  const { isSuccess, data, handleSearchPOI } = useSearchPOI();
 
-  useEffect(() => {
-    if (isSuccess) {
-      console.log("data", data);
-    }
-  }, [isSuccess]);
+  const handleSuccessCallback = (resp) => {
+    dataSource.add(resp);
+    map.setCamera({
+      bounds: resp.bbox,
+    });
+  };
+
+  const { isSuccess, data, handleSearchPOI } = useSearchPOI({
+    onSuccessCallback: handleSuccessCallback,
+  });
 
   let searchInputLength = 0;
 
