@@ -13,12 +13,15 @@ const useSearchPOI = () => {
 
     try {
       setIsLoading(true);
+      setIsSuccess(false);
       const response = await searchPOI(params);
       const resp = response.geojson.getFeatures();
       setData(resp);
       setIsSuccess(true);
+      setIsLoading(false);
     } catch (err) {
       setIsLoading(false);
+      setIsSuccess(false);
 
       // TODO: error handling
       console.error("err", err);
