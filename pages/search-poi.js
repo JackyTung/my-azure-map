@@ -3,7 +3,7 @@ import SearchPOIMap from "@/containers/SearchPOIMap";
 
 const MapPage = () => {
   return (
-    <Layout title="Map page">
+    <Layout title="Search POI page">
       <SearchPOIMap />
     </Layout>
   );
