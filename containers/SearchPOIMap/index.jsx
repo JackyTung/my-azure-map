@@ -5,7 +5,7 @@ import { StyledContainer } from "./styles";
 
 const DynamicComponent = dynamic(() => import("./MapCore"), { ssr: false });
 
-const Map = () => {
+const SearchPOIMap = () => {
   return (
     <MapProvider>
       <StyledContainer>
@@ -15,4 +15,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default SearchPOIMap;

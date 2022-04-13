@@ -1,10 +1,10 @@
 import Layout from "@/components/Layout";
-import Map from "@/containers/Map";
+import SearchPOIMap from "@/containers/SearchPOIMap";
 
 const MapPage = () => {
   return (
     <Layout title="Map page">
-      <Map />
+      <SearchPOIMap />
     </Layout>
   );
 };
