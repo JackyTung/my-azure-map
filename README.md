@@ -11,12 +11,25 @@ This is a azure-map practice project, build by [My Next App](https://github.com/
 
 ## Getting Started
 
-First, run the development server:
+First, install the require package:
 
 ```bash
 yarn install
+```
+
+Second, create .env file and add your MAP_KEY
+
+```
+// .env
+MAP_KEY={your_map_key}
+```
+
+Third, run the development server
+
+```
 yarn dev
 ```
+
 
 ## Two pages
 
