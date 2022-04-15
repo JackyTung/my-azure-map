@@ -34,3 +34,21 @@ export const searchPOI = ({ query = "gasoline-station", payload }) => {
     view: "Auto",
   });
 };
+
+/*
+// position = [longitude, latitude]
+export const searchReverseAddress = ({ position = [0, 0], payload = {} }) => {
+  return searchURL.searchReverseAddress(atlasService.Aborter.timeout(10000), position, payload);
+};
+
+
+export const searchReverseCrossStreet = ({ position = [0, 0], payload = {} }) => {
+  return searchURL.searchReverseCrossStreet(atlasService.Aborter.timeout(10000), position, payload);
+};
+
+// query: string | [longitude, latitude]
+export const searchFuzzy = ({ query, payload = {} }) => {
+  return searchURL.searchFuzzy(atlasService.Aborter.timeout(10000), query, option);
+};
+
+*/
